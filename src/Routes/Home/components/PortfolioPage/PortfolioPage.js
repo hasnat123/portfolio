@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faYoutube, faGithub} from '@fortawesome/fontawesome-free-brands'
 import ReactPlayer from "react-player";
+import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 import React, { useState } from 'react'
 
 import Project1Thumbnail from '../../../../Assets/images/Project1Thumbnail.jpg'
@@ -37,54 +39,66 @@ const PortfolioPage = () => {
   return (
     <div id="id-portfolio-page" className={enlarge ? 'section-container portfolio-page active' : 'section-container portfolio-page'}>
       <div className="section-header">
-        <h2 className='heading'>Things I've Built</h2>
-        <p>A collection of applications I developed at home and at work using various programming languages and tools. All fully functional and mobile-responsive. Feel free to take a look!</p>
+        <Fade bottom><h2 className='heading'>Things I've Built</h2></Fade>
+        <Fade bottom delay={300}><p>A collection of applications I developed at home and at work using various programming languages and tools. All fully functional and mobile-responsive. Feel free to take a look!</p></Fade>
       </div>
+        <div className="portfolio-grid">
+          <Zoom delay={600}>
+            <div className="grid-item"><img src={Project1Thumbnail} alt="Project1Thumbnail" />
+              <p>Anime rating site</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project1} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/anime" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+          <Zoom delay={800}>
+            <div className="grid-item"><img src={Project2Thumbnail} alt="Project2Thumbnail" />
+              <p>Restaurant web page</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project2} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/Restaurant" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+          <Zoom delay={1000}>
+            <div className="grid-item"><img src={Project3Thumbnail} alt="Project3Thumbnail" />
+              <p>React file uploader</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project3} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/file-loader" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+          <Zoom delay={1200}>
+            <div className="grid-item"><img src={Project4Thumbnail} alt="Project4Thumbnail" />
+              <p>Weather app</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project4} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/weather" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+          <Zoom delay={1400}>
+            <div className="grid-item"><img src={Project5Thumbnail} alt="Project5Thumbnail" />
+              <p>Crypto info site</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project5} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/crypto-list" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+          <Zoom delay={1600}>
+            <div className="grid-item"><img src={Project6Thumbnail} alt="Project6Thumbnail" />
+              <p>Hangman game</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project6} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/hangman" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+        </div>
 
-      <div className="portfolio-grid">
-        <div className="grid-item"><img src={Project1Thumbnail} alt="Project1Thumbnail" />
-          <p>Anime rating site</p>
-          <div className="overlay">
-            <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project1} onClick={HandleEnlarge}/>
-            <a href="https://github.com/hasnat123/anime" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-          </div>
-        </div>
-        <div className="grid-item"><img src={Project2Thumbnail} alt="Project2Thumbnail" />
-          <p>Restaurant web page</p>
-          <div className="overlay">
-            <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project2} onClick={HandleEnlarge}/>
-            <a href="https://github.com/hasnat123/Restaurant" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-          </div>
-        </div>
-        <div className="grid-item"><img src={Project3Thumbnail} alt="Project3Thumbnail" />
-          <p>React file uploader</p>
-          <div className="overlay">
-            <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project3} onClick={HandleEnlarge}/>
-            <a href="https://github.com/hasnat123/file-loader" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-          </div>
-        </div>
-        <div className="grid-item"><img src={Project4Thumbnail} alt="Project4Thumbnail" />
-          <p>Weather app</p>
-          <div className="overlay">
-            <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project4} onClick={HandleEnlarge}/>
-            <a href="https://github.com/hasnat123/weather" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-          </div>
-        </div>
-        <div className="grid-item"><img src={Project5Thumbnail} alt="Project5Thumbnail" />
-          <p>Crypto info site</p>
-          <div className="overlay">
-            <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project5} onClick={HandleEnlarge}/>
-            <a href="https://github.com/hasnat123/crypto-list" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-          </div>
-        </div>
-        <div className="grid-item"><img src={Project6Thumbnail} alt="Project6Thumbnail" />
-          <p>Hangman game</p>
-          <div className="overlay">
-            <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project6} onClick={HandleEnlarge}/>
-            <a href="https://github.com/hasnat123/hangman" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-          </div>
-        </div>
-      </div>
       
       <FontAwesomeIcon onClick={HandleEnlarge} icon={faTimes}/>
       <div className="grid-item-large">

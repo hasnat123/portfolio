@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import Fade from 'react-reveal/Fade';
 import Logo from "./../../Assets/images/Logo.svg"
 import CV from "./../../Assets/images/ProgrammingCV.pdf"
 
@@ -9,7 +10,23 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const [color, setColor] = useState(false);
 
-    const HandleToggle = () => setToggle(!toggle);
+    const HandleToggle = () =>
+    {
+      setToggle(!toggle);
+    }
+
+    const HandleScroll = (e) =>
+    { 
+      let element = document.querySelector(e.currentTarget.getAttribute("data-scroll"));
+      let pos = element.style.position;
+      let top = element.style.top;
+      element.style.position = 'relative';
+      window.innerWidth <= 1023 ? element.style.top = '-70px' : element.style.top = '-20px';
+      element.scrollIntoView({behavior: 'smooth', block: 'start'});
+      element.style.top = top;
+      element.style.position = pos;
+    }
+
     const HandleColor = () => window.scrollY >= 90 ? setColor(true) : setColor(false);
 
     window.addEventListener('scroll', HandleColor);
@@ -28,11 +45,19 @@ const Navbar = () => {
 
         <div className={toggle ? "nav-list open" : "nav-list"}>
           <ul>
-              <li><a href='#id-portfolio-page'>Projects</a></li>
+            <Fade top delay={5000}>
+              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-portfolio-page"}>Projects</a></li>
+            </Fade>
               {/* <li>Experience</li> */}
-              <li><a href='#id-about-page'>About</a></li>
-              <li><a href='#id-contact-page'>Contact</a></li>
-              <li><a href={CV} target="_blank" rel="noopener noreferrer">My C.V.</a></li>
+            <Fade top delay={5200}>
+              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-about-page"}>About</a></li>
+            </Fade>
+            <Fade top delay={5400}>
+              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-contact-page"}>Contact</a></li>
+            </Fade>
+            <Fade top delay={5600}>
+              <li><a onClick={()=>setToggle(false)} href={CV} target="_blank" rel="noopener noreferrer">My C.V.</a></li>
+            </Fade>
           </ul>
         </div>
 
