@@ -241,9 +241,9 @@ body
   font-size: clamp(0.9rem, 0.55em, 0.55em);
 }
 
-.profile-text .heading .name
-{
-  font-family: 'Satisfy', cursive, "Cabin", sans-serif;
+
+.profile-text .heading .name {
+  font-family: Satisfy,cursive,Cabin,sans-serif;
   font-size: 1.5em;
 }
 
@@ -252,7 +252,7 @@ body
   font-size: 1em;
 }
 
-.profile-main img
+.profile-main .avatar
 {
   width: clamp(200px, 35vw, 600px);
   margin-left: 2rem;
@@ -312,7 +312,7 @@ body
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
   transition: color 0.3s, opacity 0.3s;
 }
 
@@ -322,7 +322,7 @@ body
   z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .grid-item p
@@ -361,7 +361,7 @@ body
 
 .grid-item .overlay .icon
 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   cursor: pointer;
   transition: color 0.3s;
 }
@@ -422,11 +422,16 @@ body
   z-index: 4;
   top: 2rem;
   right: 3rem;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
   color: #fff;
+  transition: color 0.3s;
   cursor: pointer;
 }
 
+.portfolio-page .fa-xmark:hover
+{
+  color: #fd8463;
+}
 
 .active .grid-item-large
 {
@@ -604,10 +609,13 @@ body
   width: 50%;
   max-width: 50rem;
   padding: 0 3rem;
+  margin-top: 2rem;
 }
 
 .contact-form input, textarea, button, .notification
 {
+  position: relative;
+  z-index: 0;
   border: 0;
   background: #3b3b3b;
   margin-bottom: 0.7rem;
@@ -617,13 +625,45 @@ body
   outline: none;
 }
 
+.contact-form input, textarea, button
+{
+  width: 100%;
+}
+
+.contact-form .input-container
+{
+  position: relative;
+}
+
+.contact-form .input-container span
+{
+  position: absolute;
+  width: 100%;
+  height: 7.5%;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 0.7rem;
+  background: #fd8463;
+  transition: transform 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.contact-form .input-container input:focus ~ span, textarea:focus ~ span, .contact-form .input-container textarea:focus ~ span
+{
+  transform: scaleX(1);
+}
+
+
 .contact-form .first-line
 {
   display: flex;
   justify-content: space-between;
 }
 
-.first-line input
+.first-line .input-container
 {
   width: 49.25%;
 }
@@ -631,12 +671,26 @@ body
 .contact-form button
 {
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.contact-form button:hover
+.contact-form button::before
 {
-  background-color: #fd8463;
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fd8463;
+  transition: transform 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.contact-form button:hover::before
+{
+  transform: scaleX(1);
 }
 
 .notification
@@ -645,6 +699,7 @@ body
   bottom: 0;
   right: 10px;
   animation: notification 0.5s ease;
+  padding: 1rem 3rem;
 }
 
 @media screen and (max-width: 1023px)
@@ -753,20 +808,22 @@ body
   .profile-text
   {
     width: 100%;
+    align-items: center;
   }
-  
-  .profile-text .heading .name
-  {
-    line-height: 1.2em;
-    font-size: 1.4em;
-  }
+
 
   .profile-text .heading
   {
     margin-bottom: 0.75rem;
   }
 
-  .profile-main img
+  .profile-text .heading .name
+  {
+    font-size: 1.4em;
+    line-height: 1.2em;
+  }
+
+  .profile-main .avatar
   {
     margin-left: 0;
   }
@@ -789,6 +846,7 @@ body
   .about-page
   {
     flex-direction: column;
+    padding-bottom: 0;
   }
 
   .about-page .section-text, .cube-container
@@ -811,11 +869,6 @@ body
   }
 
   /*Contact page*/
-
-  .contact-page
-  {
-    padding-top: 5vw;
-  }
 
   .contact-page-inner
   {
@@ -842,7 +895,7 @@ body
 
   .contact-form
   {
-    max-width: 40rem;
+    max-width: 30rem;
   }
 
   .contact-form .first-line
@@ -851,11 +904,19 @@ body
     flex-direction: column;
   }
 
-  .first-line input
+  .first-line .input-container
   {
     width: 100%;
   }
 
+}
+
+@media screen and (max-width: 350px)
+{
+  .name
+  {
+    width: 82vw;
+  }
 }
 
 @keyframes background-animation
@@ -893,6 +954,15 @@ body
 	100% {
 		transform: translateY(-800px) rotate(0deg);
 		opacity: 0;
+	}
+}
+
+@keyframes fill-text-1 {
+	0% {
+		stroke-dashoffset: 788.6626586914062;
+	}
+	100% {
+		stroke-dashoffset: 0;
 	}
 }
 
