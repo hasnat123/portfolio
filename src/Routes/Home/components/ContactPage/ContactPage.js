@@ -36,7 +36,7 @@ const ContactPage = () => {
             <Fade left delay={600}>
                 <div className="contact-details">
                     <h3>My Details</h3>
-                    <div className="row"><span><FontAwesomeIcon icon={faEnvelope} className='icon'/></span><span>Email:</span>hasnat_45@hotmail.co.uk</div>
+                    <div className="row"><span><FontAwesomeIcon icon={faEnvelope} className='icon'/></span><span>Email:</span>abuhasnat5267@gmail.com</div>
                     <div className="row"><span><FontAwesomeIcon icon={faMobileScreenButton} className='icon'/></span><span>Phone:</span>07428338402</div>
                     <div className="row"><span><FontAwesomeIcon icon={faLocationDot} className='icon'/></span><span>Location:</span>London, United Kingdom</div>
                 </div>
