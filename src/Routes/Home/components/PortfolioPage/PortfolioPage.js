@@ -12,6 +12,7 @@ import Project3Thumbnail from '../../../../Assets/images/Project3Thumbnail.jpg'
 import Project4Thumbnail from '../../../../Assets/images/Project4Thumbnail.jpg'
 import Project5Thumbnail from '../../../../Assets/images/Project5Thumbnail.jpg'
 import Project6Thumbnail from '../../../../Assets/images/Project6Thumbnail.jpg'
+import Project7Thumbnail from '../../../../Assets/images/Project7Thumbnail.jpg'
 
 import Project1 from '../../../../Assets/videos/Project1.mp4'
 import Project2 from '../../../../Assets/videos/Project2.mp4'
@@ -19,6 +20,7 @@ import Project3 from '../../../../Assets/videos/Project3.mp4'
 import Project4 from '../../../../Assets/videos/Project4.mp4'
 import Project5 from '../../../../Assets/videos/Project5.mp4'
 import Project6 from '../../../../Assets/videos/Project6.mp4'
+import Project7 from '../../../../Assets/videos/Project7.mp4'
 
 
 
@@ -44,16 +46,16 @@ const PortfolioPage = () => {
       </div>
         <div className="portfolio-grid">
           <Zoom delay={600}>
-            <div className="grid-item"><img src={Project1Thumbnail} alt="Project1Thumbnail" />
-              <p>Anime rating site</p>
+            <div className="grid-item"><img src={Project7Thumbnail} alt="Project1Thumbnail" />
+              <p>E-commerce site</p>
               <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project1} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/anime" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project7} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/e-commerce" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
               </div>
             </div>
           </Zoom>
           <Zoom delay={800}>
-            <div className="grid-item"><img src={Project2Thumbnail} alt="Project2Thumbnail" />
+            <div className="grid-item"><img src={Project2Thumbnail} alt="Project3Thumbnail" />
               <p>Restaurant web page</p>
               <div className="overlay">
                 <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project2} onClick={HandleEnlarge}/>
@@ -62,11 +64,11 @@ const PortfolioPage = () => {
             </div>
           </Zoom>
           <Zoom delay={1000}>
-            <div className="grid-item"><img src={Project3Thumbnail} alt="Project3Thumbnail" />
-              <p>React file uploader</p>
+            <div className="grid-item"><img src={Project1Thumbnail} alt="Project2Thumbnail" />
+              <p>Anime rating site</p>
               <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project3} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/file-loader" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project1} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/anime" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
               </div>
             </div>
           </Zoom>
