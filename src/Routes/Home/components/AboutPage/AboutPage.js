@@ -11,7 +11,7 @@ const AboutPage = () => {
             <div className="section-text">
                 <div className="section-header">
                     <h2 className='heading'>A bit more about myself...</h2>
-                    <p>I possess extensive knowledge of a variety of widely used programming languages and frameworks, and have worked on a number of projects of different scales. I was most recently employed at a language teaching company where I collaborated with talented individuals and helped in developing the main user web application. I have a deep passion for creating professional, high-quality websites and have the drive to continually advance my programming skills.</p>
+                    <p>I possess extensive knowledge of a variety of widely used programming languages and frameworks, and have worked on a number of projects of different scales. I was most recently employed at a language tutoring agency where I collaborated with talented individuals and helped in developing the main web application. I have a deep passion for creating professional, high-quality websites and have the drive to continually advance my programming skills.</p>
                 </div>
             </div>
         </Fade>

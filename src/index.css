@@ -276,6 +276,11 @@ body
   margin-bottom: 3.5rem;
 }
 
+.section-header p
+{
+  line-height: 4.3vh;
+}
+
 /*Portfolio*/
 
 .portfolio-page .section-header
@@ -835,6 +840,11 @@ body
     padding: 3.5rem 1rem;
   }
 
+  .section-header p
+  {
+    line-height: 2.25vh;
+  }
+
   .portfolio-page .fa-xmark
   {
     top: 1rem;
@@ -916,6 +926,22 @@ body
   .name
   {
     width: 82vw;
+  }
+}
+
+@media screen and (max-height: 770px)
+{
+  .section-header p
+  {
+    line-height: 2.85vh;
+  }
+}
+
+@media screen and (max-height: 770px) and (min-width: 1024px)
+{
+  .section-header p
+  {
+    line-height: 4.75vh;
   }
 }
 
