@@ -14,6 +14,8 @@ import Project5Thumbnail from '../../../../Assets/images/Project5Thumbnail.jpg'
 import Project6Thumbnail from '../../../../Assets/images/Project6Thumbnail.jpg'
 import Project7Thumbnail from '../../../../Assets/images/Project7Thumbnail.jpg'
 import Project8Thumbnail from '../../../../Assets/images/Project8Thumbnail.jpg'
+import Project9Thumbnail from '../../../../Assets/images/Project9Thumbnail.jpg'
+import Project10Thumbnail from '../../../../Assets/images/Project10Thumbnail.jpg'
 
 
 import Project1 from '../../../../Assets/videos/Project1.mp4'
@@ -24,6 +26,8 @@ import Project5 from '../../../../Assets/videos/Project5.mp4'
 import Project6 from '../../../../Assets/videos/Project6.mp4'
 import Project7 from '../../../../Assets/videos/Project7.mp4'
 import Project8 from '../../../../Assets/videos/Project8.mp4'
+import Project9 from '../../../../Assets/videos/Project9.mp4'
+import Project10 from '../../../../Assets/videos/Project10.mp4'
 
 
 
@@ -50,6 +54,24 @@ const PortfolioPage = () => {
       </div>
         <div className="portfolio-grid">
           <Zoom delay={600}>
+            <div className="grid-item"><img src={Project9Thumbnail} alt="Project9Thumbnail" />
+              <p>Mobile App Showcase</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project9} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/NFT-App-Showcase" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+          <Zoom delay={800}>
+            <div className="grid-item"><img src={Project10Thumbnail} alt="Project10Thumbnail" />
+              <p>NFT Marketplace App</p>
+              <div className="overlay">
+                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project10} onClick={HandleEnlarge}/>
+                <a href="https://github.com/hasnat123/NFT-App" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
+              </div>
+            </div>
+          </Zoom>
+          <Zoom delay={1000}>
             <div className="grid-item"><img src={Project7Thumbnail} alt="Project1Thumbnail" />
               <p>E-commerce website</p>
               <div className="overlay">
@@ -58,7 +80,7 @@ const PortfolioPage = () => {
               </div>
             </div>
           </Zoom>
-          <Zoom delay={800}>
+          <Zoom delay={1200}>
             <div className="grid-item"><img src={Project2Thumbnail} alt="Project2Thumbnail" />
               <p>Restaurant web page</p>
               <div className="overlay">
@@ -67,7 +89,7 @@ const PortfolioPage = () => {
               </div>
             </div>
           </Zoom>
-          <Zoom delay={1000}>
+          <Zoom delay={1400}>
             <div className="grid-item"><img src={Project8Thumbnail} alt="Project3Thumbnail" />
               <p>Recipe app website</p>
               <div className="overlay">
@@ -76,7 +98,7 @@ const PortfolioPage = () => {
               </div>
             </div>
           </Zoom>
-          <Zoom delay={1200}>
+          <Zoom delay={1600}>
             <div className="grid-item"><img src={Project1Thumbnail} alt="Project4Thumbnail" />
               <p>Anime rating site</p>
               <div className="overlay">
@@ -85,7 +107,7 @@ const PortfolioPage = () => {
               </div>
             </div>
           </Zoom>
-          <Zoom delay={1400}>
+          <Zoom delay={1800}>
             <div className="grid-item"><img src={Project4Thumbnail} alt="Project5Thumbnail" />
               <p>Weather app</p>
               <div className="overlay">
@@ -94,7 +116,7 @@ const PortfolioPage = () => {
               </div>
             </div>
           </Zoom>
-          <Zoom delay={1600}>
+          <Zoom delay={2000}>
             <div className="grid-item"><img src={Project6Thumbnail} alt="Project6Thumbnail" />
               <p>Hangman game</p>
               <div className="overlay">
