@@ -43,6 +43,7 @@ const AboutPage = () => {
           "ES6",
           "GIT",
           "Jest",
+          "NextJS"
         ];
         const options = {
           radius: (windowWidth/6),
