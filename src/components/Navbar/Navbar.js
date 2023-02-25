@@ -46,16 +46,19 @@ const Navbar = () => {
         <div className={toggle ? "nav-list open" : "nav-list"}>
           <ul>
             <Fade top delay={5000}>
-              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-portfolio-page"}>Projects</a></li>
+              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-intro-page"}>About</a></li>
             </Fade>
               {/* <li>Experience</li> */}
             <Fade top delay={5200}>
-              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-about-page"}>About</a></li>
+              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-portfolio-page"}>Projects</a></li>
             </Fade>
             <Fade top delay={5400}>
-              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-contact-page"}>Contact</a></li>
+              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-about-page"}>Experience</a></li>
             </Fade>
             <Fade top delay={5600}>
+              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-contact-page"}>Contact</a></li>
+            </Fade>
+            <Fade top delay={5800}>
               <li><a onClick={()=>setToggle(false)} href={CV} target="_blank" rel="noopener noreferrer">My C.V.</a></li>
             </Fade>
           </ul>

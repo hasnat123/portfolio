@@ -1,21 +1,90 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHtml5, faCss3, faJsSquare, faReact, faSass, faNodeJs} from '@fortawesome/fontawesome-free-brands'
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
+import { useEffect } from 'react';
+import { useRef } from 'react';
+import TagCloud from 'TagCloud';
+import { useState } from 'react';
+import { debounce } from 'lodash';
 
 const AboutPage = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    
+    const tagCloudRef = useRef();
+
+    const handleWindowResize = useMemo(
+      () => debounce(() => {
+        setWindowWidth(window.innerWidth);
+      }, 100),
+      []
+    );
+
+    const initializeTagCloud = () => {
+        const container = tagCloudRef.current;
+        const texts = [
+          "HTML",
+          "CSS",
+          "REST",
+          "SASS",
+          "JavaScript",
+          "React",
+          "NPM",
+          "Redux",
+          "MongoDB",
+          "TypeScript",
+          "NodeJS",
+          "JSON",
+          "GITHUB",
+          "Babel",
+          "Jquery",
+          "ExpressJS",
+          "ES6",
+          "GIT",
+          "Jest",
+        ];
+        const options = {
+          radius: (windowWidth/6),
+          maxSpeed: "fast",
+          initSpeed: "fast",
+          keep: true,
+        };
+        // Destroy the old instance if it exists
+        if (container.hasChildNodes()) {
+          container.removeChild(container.childNodes[0]);
+        }
+        // Create a new instance
+        TagCloud(container, texts, options);
+      };
+      
+      useEffect(() => {
+        initializeTagCloud();
+        return () => {
+          // clean up
+        };
+      }, [windowWidth]);
+      
+      useEffect(() => {
+        window.addEventListener('resize', handleWindowResize);
+        return () => {
+          window.removeEventListener('resize', handleWindowResize);
+        };
+      });
+    
+
   return (
+    <>
     <div id="id-about-page" className='section-container about-page'>
         <Fade left>
             <div className="section-text">
                 <div className="section-header">
-                    <h2 className='heading'>A bit more about myself...</h2>
-                    <p>I possess extensive knowledge of a variety of widely used programming languages and frameworks, and have worked on a number of projects of different scales. I was most recently employed at a language tutoring agency where I collaborated with talented individuals and helped in developing the main web application. I have a deep passion for creating professional, high-quality websites and have the drive to continually advance my programming skills.</p>
+                    <h2 className='heading'>A Bit More About Myself...</h2>
+                    <p>Having worked on numerous projects over the years, I have an extensive understanding of many commonly used programming languages and frameworks. I have proficiency in both frontend and backend technologies.</p>
                 </div>
             </div>
         </Fade>
-        <Zoom delay={300}>
+        {/* <Zoom delay={300}>
             <div className="cube-container">
                 <div className="cube">
                     <div className="face1">
@@ -44,8 +113,14 @@ const AboutPage = () => {
                     </div>
                 </div>
             </div>
+        </Zoom> */}
+        <Zoom delay={300}>
+            <div className="text-sphere">
+              <span className="tagcloud" ref={tagCloudRef}></span>
+            </div>
         </Zoom>
     </div>
+</>
   )
 }
 

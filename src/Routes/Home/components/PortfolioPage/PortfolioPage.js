@@ -48,9 +48,11 @@ const PortfolioPage = () => {
 
   return (
     <div id="id-portfolio-page" className={enlarge ? 'section-container portfolio-page active' : 'section-container portfolio-page'}>
-      <div className="section-header">
-        <Fade bottom><h2 className='heading'>Things I've Built</h2></Fade>
-        <Fade bottom delay={300}><p>A collection of recent applications I developed at home and at work using various programming languages and tools. All fully functional and mobile-responsive. Feel free to take a look!</p></Fade>
+      <div className="section-text">
+        <div className="section-header">
+          <Fade bottom><h2 className='heading'>Things I've Built</h2></Fade>
+          <Fade bottom delay={300}><p>A collection of recent applications I developed at home and work using various programming languages and tools. All are fully functional and mobile-responsive.</p></Fade>
+        </div>
       </div>
         <div className="portfolio-grid">
           <Zoom delay={600}>

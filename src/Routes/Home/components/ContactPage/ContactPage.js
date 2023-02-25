@@ -30,7 +30,7 @@ const ContactPage = () => {
     <div id="id-contact-page" className='section-container contact-page'>
         <div className="section-header">
             <Fade bottom><h2 className='heading'>Contact Me</h2></Fade>
-            <Fade bottom delay={300}><p>I am currently looking for job oppertunites. My inbox is always open so feel free to drop me a message.</p></Fade>
+            <Fade bottom delay={300}><p>I am currently looking for job opportunities. My inbox is always open, so feel free to drop me a message.</p></Fade>
         </div>
         <div className="contact-page-inner">
             <Fade left delay={600}>

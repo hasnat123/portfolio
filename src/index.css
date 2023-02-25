@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro:400,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
 *,
 *::before,
 *::after
@@ -13,7 +14,7 @@
 :root
 {
     --main-font: "Source Sans Pro", sans-serif;
-    --body-font: "Cabin", sans-serif;
+    --body-font: 'Open Sans', sans-serif;
     --main-font-color-dark: rgb(38, 38, 38);
     --nav-font-color: rgb(255, 255, 255);
     --body-font-color: #515151;
@@ -22,6 +23,8 @@
     --main-font-size: clamp(0.75rem, 2vw, 1.75rem);
     --cube-width: clamp(140px, 17.5vw, 250px);
     --cube-width-half: calc(var(--cube-width) / 2);
+
+    color-scheme: dark;
 }
 
 html
@@ -36,7 +39,31 @@ body
 {
     overflow-x: hidden;
     font-size: clamp(0.75rem, 2vw, 1.75rem);
-    background: var(--main-font-color-dark);
+    background: #121212;
+}
+.text-shpere {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tagcloud {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.0625em;
+  font-size: clamp(0.7em, 2.75vw, 1em);
+  height: 10px;
+}
+
+/* Change color of each text in sphere on hover   */
+.tagcloud--item {
+  color: #5be6c5;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+.tagcloud--item:hover {
+  color: #fff;
 }
 
 .hero
@@ -46,9 +73,10 @@ body
   width: 100%;
   height: 100vh;
   padding: 0 3.5rem;
-  background: linear-gradient(to bottom right, #fab657, #ff5f6d, #fab657, #ff5f6d);
+  /* background: linear-gradient(to bottom right, #fab657, #ff5f6d, #fab657, #ff5f6d);
   background-size: 400% 400%;
-  animation: background-animation 20s ease-in-out infinite;
+  animation: background-animation 20s ease-in-out infinite; */
+  background-color: #0A192F;
 }
 
 .box-area {
@@ -65,7 +93,8 @@ body
 	list-style: none;
 	width: 25px;
 	height: 25px;
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2); */
+  background-color: rgb(100, 255, 218, 0.5);
   bottom: -150px;
 }
 .box-area li:nth-child(1) {
@@ -123,7 +152,7 @@ body
 
 .navbar-bg
 {
-  background: rgb(38, 38, 38, 0.8);
+  background: rgb(18, 18, 18, 0.8);
   box-shadow: 0 0 10px #000000;
   backdrop-filter: blur(10px);
 }
@@ -172,28 +201,46 @@ body
 
 .navbar ul li a
 {
-  color: #fff;
+    transition: color 0.3s;
+    color: #ccd6f6;
 }
 
 .navbar ul li:last-child a
 {
-  border: #fff solid 2px;
+  border: #64ffda solid 2px;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.1);
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: #64ffda;
+
   transition: background-color 0.3s, border 0.3s;
+}
+
+.navbar ul li:last-child a:hover
+{
+  background: rgb(100, 255, 218, 0.1);
+}
+
+.navbar.navbar-bg ul li:not(:last-child) a
+{
+  /* border: rgb(253, 132, 99) solid 2px; */
+  color: #fff;
 }
 
 .navbar.navbar-bg ul li:last-child a
 {
-  border: rgb(253, 132, 99) solid 2px;
-  background-color: rgba(253, 132, 99, 0.5);
+  /* border: rgb(253, 132, 99) solid 2px; */
+  background: rgb(100, 255, 218, 0.1);
 }
 
 .navbar ul li:not(:last-child):hover
 {
-    background: rgba(0.5, 0.5, 0.5, 0.1);
+  color: #64ffda;
+  background: rgba(0.5, 0.5, 0.5, 0.1);
+}
+
+.navbar ul li:not(:last-child):hover > a
+{
+  color: #64ffda;
 }
 
 /*Profile*/
@@ -226,7 +273,7 @@ body
 .heading
 {
   margin-bottom: 1rem;
-  color: #fd8463;
+  color: #5be6c5;
 }
 
 .profile-text .heading
@@ -237,24 +284,35 @@ body
 
 .profile-text .heading span:first-child
 {
-  font-family: 'Satisfy', cursive, "Cabin", sans-serif;
-  font-size: clamp(0.9rem, 0.55em, 0.55em);
+  /* font-family: 'Satisfy', cursive, "Cabin", sans-serif; */
+  font-size: clamp(0.9rem, 0.4em, 0.4em);
+  font-weight: 400;
+  color: #64ffda;
 }
 
 
 .profile-text .heading .name {
-  font-family: Satisfy,cursive,Cabin,sans-serif;
-  font-size: 1.5em;
+  /* font-family: Satisfy,cursive,Cabin,sans-serif; */
+  font-weight: 800;
+  font-size: 1.1em;
+  color: #ccd6f6;
 }
 
 .profile-text span:last-child
 {
   font-size: 1em;
+  color: #8892b0;
+}
+
+.profile-text .description
+{
+  color: #8892b0;
+  font-size: 0.75em;
 }
 
 .profile-main .avatar
 {
-  width: clamp(200px, 35vw, 600px);
+  width: clamp(200px, 35vw, 500px);
   margin-left: 2rem;
 }
 
@@ -279,6 +337,35 @@ body
 .section-header p
 {
   line-height: 4.3vh;
+}
+
+/*Intro page*/
+
+.intro-page
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 9vw 7.5rem;
+  color: #fff;
+}
+
+.intro-page .section-text
+{
+  width: 50%;
+  padding: 0 2rem;
+}
+
+.intro-page .section-header
+{
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.intro-page img
+{
+  height: 23rem;
 }
 
 /*Portfolio*/
@@ -354,7 +441,7 @@ body
   z-index: 2;
   width: 100%;
   height: 100%;
-  background: #fd8463;
+  background: #388b78;
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -461,10 +548,9 @@ body
 {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: space-around;
+  align-items: center;
   padding: 9vw 7.5rem;
-  background-color: var(--main-font-color-dark);
   color: #fff;
 }
 
@@ -522,7 +608,7 @@ body
   width: var(--cube-width);
   height: var(--cube-width);
   border: 5px solid #fff;
-  background: #fd8463;
+  background: #388b78;
   text-align: center;
   font-size: 100px;
 }
@@ -604,7 +690,7 @@ body
 .contact-details .row .icon
 {
   width: 2rem;
-  color: #fd8463;
+  color: #5be6c5;
 }
 
 .contact-form
@@ -635,6 +721,11 @@ body
   width: 100%;
 }
 
+textarea
+{
+  resize: none;
+}
+
 .contact-form .input-container
 {
   position: relative;
@@ -650,7 +741,7 @@ body
   bottom: 0;
   right: 0;
   margin-bottom: 0.7rem;
-  background: #fd8463;
+  background: #5be6c5;
   transition: transform 0.3s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
@@ -687,7 +778,7 @@ body
   left: 0;
   bottom: 0;
   right: 0;
-  background: #fd8463;
+  background: #5be6c5;
   transition: transform 0.3s ease-in-out;
   transform: scaleX(0);
   transform-origin: left;
@@ -705,6 +796,14 @@ body
   right: 10px;
   animation: notification 0.5s ease;
   padding: 1rem 3rem;
+}
+
+@media screen and (max-width: 1300px)
+{
+  .section-container
+  {
+    padding: 7.5rem 3rem;
+  }
 }
 
 @media screen and (max-width: 1023px)
@@ -750,7 +849,7 @@ body
 
   .nav-list
   {
-    background: var(--main-font-color-dark);
+    background: #121212;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -793,11 +892,16 @@ body
     margin-top: 4rem;
   }
 
+  .navbar ul li:not(:last-child) a
+  {
+    color: #fff;
+  }
+
   .navbar ul li:last-child a
   {
     padding: 0.75rem 2.5rem;
-    border: rgb(253, 132, 99) solid 2px;
-    background-color: rgba(253, 132, 99, 0.5);
+    border: rgb(100, 255, 218) solid 2px;
+    background-color: rgb(100, 255, 218, 0.2);
   }
 
 
@@ -833,6 +937,43 @@ body
     margin-left: 0;
   }
 
+    /*About page*/
+
+    .intro-page
+    {
+      flex-direction: column-reverse;
+      padding-bottom: 0;
+    }
+  
+    .intro-page .section-text
+    {
+      width: 100%;
+      max-width: 35rem;
+      padding: 0;
+    }
+
+    .intro-page img
+    {
+      padding-top: 2rem;
+      height: 90vw;
+      max-height: 17.5rem;
+    }
+  
+    .intro-page .section-header
+    {
+      margin-bottom: 0.5rem;
+      text-align: left;
+      text-align: center;
+    }
+  
+  
+    .cube
+    {
+      margin-bottom: 0;
+    }
+
+
+
   /*Portfolio page*/
 
   .section-container
@@ -840,9 +981,16 @@ body
     padding: 3.5rem 1rem;
   }
 
+  .portfolio-page .section-text
+  {
+    width: 100%;
+    max-width: 35rem;
+    padding: 0;
+  }
+
   .section-header p
   {
-    line-height: 2.25vh;
+    line-height: 1.5em;
   }
 
   .portfolio-page .fa-xmark
@@ -861,6 +1009,7 @@ body
 
   .about-page .section-text, .cube-container
   {
+    max-width: 35rem;
     width: 100%;
     padding: 0;
   }
@@ -871,7 +1020,11 @@ body
     text-align: left;
     text-align: center;
   }
-
+  
+  .tagcloud
+  {
+    margin-top: 2rem;
+  }
 
   .cube
   {
@@ -935,6 +1088,8 @@ body
   {
     line-height: 2.85vh;
   }
+
+
 }
 
 @media screen and (max-height: 770px) and (min-width: 1024px)
