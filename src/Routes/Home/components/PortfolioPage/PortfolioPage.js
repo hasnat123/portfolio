@@ -1,10 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { faYoutube, faGithub} from '@fortawesome/fontawesome-free-brands'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import ReactPlayer from "react-player";
 import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
 import React, { useState } from 'react'
+import Project from '../../../../components/Navbar/Project';
+
 
 import Project1Thumbnail from '../../../../Assets/images/Project1Thumbnail.jpg'
 import Project2Thumbnail from '../../../../Assets/images/Project2Thumbnail.jpg'
@@ -16,6 +16,7 @@ import Project7Thumbnail from '../../../../Assets/images/Project7Thumbnail.jpg'
 import Project8Thumbnail from '../../../../Assets/images/Project8Thumbnail.jpg'
 import Project9Thumbnail from '../../../../Assets/images/Project9Thumbnail.jpg'
 import Project10Thumbnail from '../../../../Assets/images/Project10Thumbnail.jpg'
+import Project11Thumbnail from '../../../../Assets/images/Project11Thumbnail.jpg'
 
 
 import Project1 from '../../../../Assets/videos/Project1.mp4'
@@ -28,6 +29,7 @@ import Project7 from '../../../../Assets/videos/Project7.mp4'
 import Project8 from '../../../../Assets/videos/Project8.mp4'
 import Project9 from '../../../../Assets/videos/Project9.mp4'
 import Project10 from '../../../../Assets/videos/Project10.mp4'
+import Project11 from '../../../../Assets/videos/Project11.mp4'
 
 
 
@@ -35,7 +37,6 @@ import Project10 from '../../../../Assets/videos/Project10.mp4'
 const PortfolioPage = () => {
 
   const [enlarge, setEnlarge] = useState(false);
-  const [largeImage, setLargeImage] = useState();
   const [videoFilePath, setVideoFilePath] = useState(null);
 
   const HandleEnlarge = (e) =>
@@ -55,78 +56,15 @@ const PortfolioPage = () => {
         </div>
       </div>
         <div className="portfolio-grid">
-          <Zoom delay={600}>
-            <div className="grid-item"><img src={Project9Thumbnail} alt="Project9Thumbnail" />
-              <p>Mobile App Showcase</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project9} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/NFT-App-Showcase" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
-          <Zoom delay={800}>
-            <div className="grid-item"><img src={Project10Thumbnail} alt="Project10Thumbnail" />
-              <p>NFT Marketplace App</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project10} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/NFT-App" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
-          <Zoom delay={1000}>
-            <div className="grid-item"><img src={Project7Thumbnail} alt="Project1Thumbnail" />
-              <p>E-commerce website</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project7} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/e-commerce" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
-          <Zoom delay={1200}>
-            <div className="grid-item"><img src={Project2Thumbnail} alt="Project2Thumbnail" />
-              <p>Restaurant web page</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project2} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/Restaurant" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
-          <Zoom delay={1400}>
-            <div className="grid-item"><img src={Project8Thumbnail} alt="Project3Thumbnail" />
-              <p>Recipe app website</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project8} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/Recipe-App-Website" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
-          <Zoom delay={1600}>
-            <div className="grid-item"><img src={Project1Thumbnail} alt="Project4Thumbnail" />
-              <p>Anime rating site</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project1} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/anime" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
-          <Zoom delay={1800}>
-            <div className="grid-item"><img src={Project4Thumbnail} alt="Project5Thumbnail" />
-              <p>Weather app</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project4} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/weather" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
-          <Zoom delay={2000}>
-            <div className="grid-item"><img src={Project6Thumbnail} alt="Project6Thumbnail" />
-              <p>Hangman game</p>
-              <div className="overlay">
-                <FontAwesomeIcon className='icon' icon={faYoutube} data-image={Project6} onClick={HandleEnlarge}/>
-                <a href="https://github.com/hasnat123/hangman" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
-              </div>
-            </div>
-          </Zoom>
+          <Project delay={600} title='AI Image Generator' thumbnail={Project11Thumbnail} video={Project11} github='https://github.com/hasnat123/AI-Image-Generator' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={800} title='Mobile App Showcase' thumbnail={Project9Thumbnail} video={Project9} github='https://github.com/hasnat123/NFT-App-Showcase' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={1000} title='NFT Marketplace App' thumbnail={Project10Thumbnail} video={Project10} github='https://github.com/hasnat123/NFT-App' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={1200} title='E-commerce website' thumbnail={Project7Thumbnail} video={Project7} github='https://github.com/hasnat123/e-commerce' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={1400} title='Restaurant web page' thumbnail={Project2Thumbnail} video={Project2} github='https://github.com/hasnat123/Restaurant' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={1600} title='Recipe app website' thumbnail={Project8Thumbnail} video={Project8} github='https://github.com/hasnat123/Recipe-App-Website' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={1800} title='Anime rating site' thumbnail={Project1Thumbnail} video={Project1} github='https://github.com/hasnat123/anime' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={2000} title='Weather app' thumbnail={Project4Thumbnail} video={Project4} github='https://github.com/hasnat123/weather' HandleEnlarge={HandleEnlarge}/>
+          <Project delay={2200} title='Hangman game' thumbnail={Project6Thumbnail} video={Project6} github='https://github.com/hasnat123/hangman' HandleEnlarge={HandleEnlarge}/>
         </div>
 
       
