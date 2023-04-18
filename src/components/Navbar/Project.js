@@ -7,7 +7,7 @@ const Project = ({ delay, title, thumbnail, video, github, HandleEnlarge }) => {
   return (
     <Zoom delay={delay}>
         <div className="grid-item"><img src={thumbnail} alt={`${thumbnail}`} />
-          <p>{title}</p>
+          <h1>{title}</h1>
           <div className="overlay">
             <FontAwesomeIcon className='icon' icon={faYoutube} data-image={video} onClick={HandleEnlarge}/>
             <a href={github} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon className='icon' icon={faGithub}/></a>
