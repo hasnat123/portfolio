@@ -46,17 +46,17 @@ const Navbar = () => {
         <div className={toggle ? "nav-list open" : "nav-list"}>
           <ul>
             <Fade top delay={1000} duration={600}>
-              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-intro-page"}>About</a></li>
+              <li onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-intro-page"}><a>About</a></li>
             </Fade>
               {/* <li>Experience</li> */}
             <Fade top delay={1100} duration={600}>
-              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-portfolio-page"}>Projects</a></li>
+              <li onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-portfolio-page"}><a>Projects</a></li>
             </Fade>
             <Fade top delay={1200} duration={600}>
-              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-about-page"}>Experience</a></li>
+              <li onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-about-page"}><a>Experience</a></li>
             </Fade>
             <Fade top delay={1300} duration={600}>
-              <li><a onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-contact-page"}>Contact</a></li>
+              <li onClick={(e)=>{setToggle(false); HandleScroll(e);}} data-scroll={"#id-contact-page"}><a>Contact</a></li>
             </Fade>
             <Fade top delay={1400} duration={600}>
               <li><a onClick={()=>setToggle(false)} href={CV} target="_blank" rel="noopener noreferrer">My C.V.</a></li>

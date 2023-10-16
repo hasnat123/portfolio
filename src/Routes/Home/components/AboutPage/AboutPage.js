@@ -46,9 +46,9 @@ const AboutPage = () => {
           "NextJS"
         ];
         const options = {
-          radius: (windowWidth/6),
-          maxSpeed: "fast",
-          initSpeed: "fast",
+          radius: (Math.max(window.innerWidth / 6, 100)),
+          maxSpeed: "normal",
+          initSpeed: "normal",
           keep: true,
         };
         // Destroy the old instance if it exists
